@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FiHome, FiBell, FiUser, FiSearch } from "react-icons/fi";
 
@@ -39,17 +40,33 @@ const NavbarLink = styled.li`
   color: #f5f5f5;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3),
     -2px -2px 10px rgba(255, 255, 255, 0.3);
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 
 const DropdownMenu = styled.div`
   position: absolute;
-  top: 60px;
-  right: 16px;
+  top: 98px;
+  right: 10px;
   background-color: #333;
   box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3),
     -2px -2px 10px rgba(0, 0, 0, 0.3);
-  padding: 8px;
+  padding: 15px;
+  border-radius: 15px 15px 15px 15px;
+  color: #f5f5f5;
   display: ${(props) => (props.isOpen ? "block" : "none")};
+`;
+
+const DropdownLink = styled(Link)`
+  display: block;
+  padding: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: #444;
+  }
 `;
 
 const SearchContainer = styled.div`
@@ -118,10 +135,10 @@ const Navbar = () => {
         </NavbarLink>
       </NavbarLinks>
       <DropdownMenu isOpen={isOpen}>
-        <p>My Profile</p>
-        <p>Settings</p>
-        <p>Status</p>
-        <p>Logout</p>
+        <DropdownLink>My Profile</DropdownLink>
+        <DropdownLink>Settings</DropdownLink>
+        <DropdownLink>Status</DropdownLink>
+        <DropdownLink to="/">Logout</DropdownLink>
       </DropdownMenu>
     </NavbarContainer>
   );
