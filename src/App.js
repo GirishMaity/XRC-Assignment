@@ -6,7 +6,7 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App  bg-gray-800 min-h-screen">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />

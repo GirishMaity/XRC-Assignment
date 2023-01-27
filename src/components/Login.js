@@ -51,7 +51,12 @@ const Login = () => {
           onChange={handleChange}
         />
         <br />
-        <button onClick={handleLogin}>Begin Experience</button>
+        <button
+          className="text-white text-lg inline-block cursor-pointer will-change-transform shadow-lg px-4 rounded bg-blue-700"
+          onClick={handleLogin}
+        >
+          Begin Experience
+        </button>
       </form>
     </div>
   );
