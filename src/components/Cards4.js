@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
+  display: flex;
   height: 80vh;
   margin-left: 270px;
   margin-right: 10px;
@@ -9,8 +10,9 @@ const Container = styled.div`
 `;
 
 const Card = styled.div`
-  width: 190px;
-  height: 254px;
+  width: 254px;
+  height: 190px;
+  margin-right: 10px;
   border-radius: 20px;
   background-color: #333;
   position: relative;
@@ -73,7 +75,20 @@ const Cards4 = () => {
         <CardDetails>
           <Text>Project 1</Text>
         </CardDetails>
-        <Button>Github</Button>
+        <Button
+          onClick={() => {
+            window.location.href =
+              "https://github.com/GirishMaity/XRC-Assignment";
+          }}
+        >
+          Github
+        </Button>
+      </Card>
+      <Card>
+        <CardDetails>
+          <Text>+ New Project</Text>
+        </CardDetails>
+        {/* <Button>Github</Button> */}
       </Card>
     </Container>
   );
