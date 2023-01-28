@@ -7,6 +7,7 @@ const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 16px;
   background-color: #333;
   box-shadow: 5px 5px 8px #222, -5px -5px 8px #444;
@@ -86,7 +87,7 @@ const SearchInput = styled.input`
   background-color: #333;
   color: #fff;
   padding: 0.5rem 1rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   border: none;
   box-shadow: inset 5px 5px 8px #222, inset -5px -5px 8px #444;
   &:focus {

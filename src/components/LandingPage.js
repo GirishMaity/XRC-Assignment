@@ -13,39 +13,31 @@ const Container = styled.div`
 
 const Text = styled.h1`
   color: #fff;
-  font-size: 2rem;
+  font-size: 4rem;
   text-shadow: 2px 2px #636e72;
+  font-family: "Damion", cursive;
 `;
 
 const Button = styled.button`
-  display: flex;
- align-items: center;
- justify-content: center;
- gap: 10px;
- font-family: inherit;
- font-size: 13px;
- font-weight: 500;
- text-transform: uppercase;
- letter-spacing: 0.4px;
- color: #7e97b8;
- background-color: #e0e8ef;
- border-style: solid;
- border-width: 2px 100px 2px 100px;
- border-color: rgba(255, 255, 255, 0.333);
- border-radius: 40px 40px 40px 40px;
- padding: 16px 24px 16px 28px;
- transform: translate(0px, 0px) rotate(0deg);
- transition: 0.2s;
- box-shadow: -2px -1px 8px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
-}
-
+  margin: 12px;
+  height: 3rem;
+  width: 20rem;
+  border-radius: 10px;
+  background: linear-gradient(315deg, #494949, #3d3d3d);
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5),
+    -3px -3px 7px rgba(255, 255, 255, 0.05);
+  font-family: "Damion", cursive;
+  border: none;
+  font-size: 16px;
+  color: rgb(161, 161, 161);
+  transition: 500ms;
   &:hover {
-    color: #516d91;
- background-color: #E5EDF5;
- box-shadow: -1px -0.5px 4px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
-  }
-  &:active {
-     box-shadow: none;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+      inset -3px -3px 7px rgba(255, 255, 255, 0.05);
+    color: #3498db;
+    transition: 500ms;
   }
 `;
 
@@ -53,6 +45,7 @@ const LandingPage = () => {
   return (
     <Container>
       <Text>Welcome to XRC</Text>
+      <br />
       <Link to="/login">
         <Button>Login</Button>
       </Link>
