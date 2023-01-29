@@ -127,7 +127,7 @@ const Login = () => {
 
   useGoogleOneTapLogin({
     onSuccess: (credentialResponse) => {
-      //console.log(credentialResponse.credential);
+      console.log(credentialResponse.credential);
       var decoded = jwt_decode(credentialResponse.credential);
       console.log(decoded);
       localStorage.setItem("data", decoded.name);
@@ -182,7 +182,20 @@ const Login = () => {
   return (
     <Background>
       <Container>
-        <Text>Login</Text>
+        {/* <GoogleLogin
+          onSuccess={(credentialResponse) => {
+            console.log(credentialResponse);
+            var decoded = jwt_decode(credentialResponse.credential);
+            console.log(decoded);
+            localStorage.setItem("data", decoded.name);
+            navigate(`/dashboard`);
+          }}
+          onError={() => {
+            console.log("Login Failed");
+          }}
+          useOneTap
+        /> */}
+        ;<Text>Login</Text>
         <form>
           <Input
             placeholder="  Full name"
