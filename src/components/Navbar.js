@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FiHome, FiBell, FiUser, FiSearch } from "react-icons/fi";
+import { useParams } from "react-router-dom";
 
 const NavbarContainer = styled.div`
   display: flex;
@@ -158,6 +159,7 @@ const SearchButton = styled.button`
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const data = localStorage.getItem("data");
 
   return (
     <NavbarContainer>
