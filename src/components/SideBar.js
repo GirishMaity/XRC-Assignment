@@ -23,11 +23,11 @@ const SidebarLink = styled(Link)`
   display: block;
   padding: 1rem;
   color: rgba(255, 255, 255, 1);
-  font-family: "Roboto";
+
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  line-height: 40px;
+  line-height: 20px;
 
   letter-spacing: 0.025em;
   margin: 10px;
@@ -49,10 +49,10 @@ const SidebarLink = styled(Link)`
 
 const SidebarText = styled.h1`
   font-weight: bold;
-  font-family: "Roboto";
+
   font-style: normal;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 23px;
   line-height: 40px;
 
   letter-spacing: 0.025em;

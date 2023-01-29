@@ -23,14 +23,13 @@ const NavbarContainer = styled.div`
 
 const NavbarBrand = styled.h1`
   margin: 10px;
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
-  font-size: 25px;
+  font-size: 30px;
   line-height: 40px;
+  margin-left: 30px;
 
   letter-spacing: 0.025em;
-  text-transform: uppercase;
 
   color: rgba(255, 255, 255, 1);
 `;

@@ -38,8 +38,6 @@ const Text = styled.div`
   // height: 24px;
   // left: 36px;
   // top: 15px;
-
-  font-family: "SF Pro Text";
   font-style: normal;
   font-weight: 700;
   font-size: 50px;
@@ -61,12 +59,13 @@ const Input = styled.input`
 
   border-radius: 10px;
   background: #2c2f33;
-  box-shadow: inset -6.22302px -6.22302px 6.22302px #3b4451,
-    inset 3.73381px 3.73381px 6.22302px #000000;
+  box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.25),
+      inset -2px -2px 8px rgba(0, 0, 0, 0.25);
+  
   //border-radius: 12.446px;
   &:focus {
-    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.25),
-      inset -2px -2px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: inset -6.22302px -6.22302px 6.22302px #3b4451,
+    inset 3.73381px 3.73381px 6.22302px #000000;
     outline: none;
 `;
 

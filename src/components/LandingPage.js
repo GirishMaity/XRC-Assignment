@@ -16,7 +16,6 @@ const Text = styled.h1`
   color: rgba(255, 255, 255, 1);
   font-size: 4rem;
   text-shadow: 2px 2px #636e72;
-  font-family: "SF Pro Text";
   font-style: normal;
   font-weight: 700;
 `;
