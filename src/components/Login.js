@@ -4,7 +4,12 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Background = styled.div`
-  background: #2c2f33;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(44, 47, 51, 1) 33%,
+    rgba(67, 67, 67, 1) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
