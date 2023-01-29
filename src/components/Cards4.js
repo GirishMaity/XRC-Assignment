@@ -6,7 +6,7 @@ const Container = styled.div`
   height: 80vh;
   margin-left: 270px;
   margin-right: 10px;
-  margin-top: 12px;
+  margin-top: 22px;
 `;
 
 const Card = styled.div`
@@ -20,15 +20,10 @@ const Card = styled.div`
 
   transition: 0.5s ease-out;
   overflow: visible;
-  background: linear-gradient(
-      95.73deg,
-      rgba(0, 118, 135, 0.08) 0.9%,
-      rgba(0, 118, 135, 0.06) 52.54%,
-      rgba(0, 118, 135, 0.02) 99.06%
-    ),
-    rgba(235, 240, 241, 0.3);
-  border-radius: 12px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(138.69deg, #1d5ba9 0%, #0a325a 100%);
+  box-shadow: 14px 14px 40px rgba(16, 16, 18, 0.75), -7px -7px 30px #262e32;
+  border-radius: 8px;
+
   &:hover {
     border-color: #008bf8;
     box-shadow: 5px 5px 8px #222, -5px -5px 8px #444;
@@ -46,6 +41,7 @@ const CardDetails = styled.div`
   gap: 0.5em;
   display: grid;
   place-content: center;
+  rgba(206, 219, 220, 1)
 `;
 
 const Button = styled.button`
@@ -75,6 +71,7 @@ const Button = styled.button`
 const Text = styled.p`
   font-size: 1.5em;
   font-weight: bold;
+  color: rgba(206, 219, 220, 1);
 `;
 
 const Cards4 = () => {

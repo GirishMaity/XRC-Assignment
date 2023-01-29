@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Cards4 from "./Cards4";
 
 const Container = styled.div`
-  background: rgba(234, 243, 244, 1);
+  background: #2c2f33;
 
   height: 100vh;
 `;

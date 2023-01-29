@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Background = styled.div`
-  background: rgba(234, 243, 244, 1);
+  background: #2c2f33;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,15 +23,10 @@ const Container = styled.div`
   left: 532px;
   top: 62px;
 
-  background: linear-gradient(
-      95.73deg,
-      rgba(0, 118, 135, 0.08) 0.9%,
-      rgba(0, 118, 135, 0.06) 52.54%,
-      rgba(0, 118, 135, 0.02) 99.06%
-    ),
-    rgba(235, 240, 241, 0.3);
   border-radius: 24px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #2c2f33;
+  box-shadow: -6.22302px -6.22302px 18.6691px #3b4451,
+    6.22302px 6.22302px 18.6691px #000000;
 `;
 
 const Text = styled.div`
@@ -54,24 +49,25 @@ const Text = styled.div`
 
   /* Silver/700 */
 
-  color: #3f455a;
+  color: rgba(255, 255, 255, 1);
 `;
 
 const Input = styled.input`
   position: relative;
   top: 4rem;
   width: 17rem;
-  height: 2rem;
+  height: 2.5rem;
 
-  background: #e1e3ea;
 
-  box-shadow: inset -3px -3px 6px #ffffff, inset 3px 3px 6px #c4c7d4;
   border-radius: 10px;
+  background: #2c2f33;
+  box-shadow: inset -6.22302px -6.22302px 6.22302px #3b4451,
+    inset 3.73381px 3.73381px 6.22302px #000000;
+  //border-radius: 12.446px;
   &:focus {
-    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5),
-      inset -1px -1px 2px rgba(255, 255, 255, 0.05);
-    transition: 0.3s;
-  }
+    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.25),
+      inset -2px -2px 8px rgba(0, 0, 0, 0.25);
+    outline: none;
 `;
 
 const Button = styled.button`
@@ -137,7 +133,7 @@ const Login = () => {
         <Text>Login</Text>
         <form>
           <Input
-            placeholder=" Full name"
+            placeholder="  Full name"
             type="text"
             name="name"
             value={userData.name}
@@ -146,7 +142,7 @@ const Login = () => {
           <br />
           <br />
           <Input
-            placeholder=" Email"
+            placeholder="  Email"
             type="text"
             name="email"
             value={userData.email}

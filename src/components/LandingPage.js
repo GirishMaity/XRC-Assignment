@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
-  background: rgba(234, 243, 244, 1);
+  background: #2c2f33;
 
   height: 100vh;
   display: flex;
@@ -13,7 +13,7 @@ const Container = styled.div`
 `;
 
 const Text = styled.h1`
-  color: #3f455a;
+  color: rgba(255, 255, 255, 1);
   font-size: 4rem;
   text-shadow: 2px 2px #636e72;
   font-family: "SF Pro Text";
@@ -31,9 +31,9 @@ const Button = styled.button`
   align-items: center;
   border: none;
   font-size: 16px;
-  color: rgb(161, 161, 161);
+
   transition: 500ms;
-  background-color: #008bf8;
+  background-color: rgba(26, 145, 250, 1);
   color: #fff;
   border-radius: 12px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5),

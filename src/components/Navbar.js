@@ -5,14 +5,14 @@ import { FiHome, FiBell, FiUser, FiSearch } from "react-icons/fi";
 
 const NavbarContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   flex-wrap: wrap;
-  padding: 16px;
-  background: #eaf3f4;
-  box-shadow: 4px 4px 10px rgba(0, 118, 135, 0.05),
-    6px 6px 40px rgba(0, 118, 135, 0.1);
-  border-radius: 20px 12px 12px 20px;
+  padding: 10px;
+  background: #2c2f33;
+  box-shadow: -6.22302px -6.22302px 18.6691px #3b4451,
+    6.22302px 6.22302px 18.6691px #000000;
+  border-radius: 24.8921px;
   transition: all 0.3s ease;
 
   left: 10px;
@@ -32,22 +32,36 @@ const NavbarBrand = styled.h1`
   letter-spacing: 0.025em;
   text-transform: uppercase;
 
-  color: #007c84;
+  color: rgba(255, 255, 255, 1);
 `;
 
 const NavbarLinks = styled.ul`
   display: flex;
+  position: relative;
   list-style: none;
-  margin: 0;
+  left: 67rem;
+  width: 2.5rem;
+  margin: 0.5rem;
   padding: 0;
+  background: #2c2f33;
+  box-shadow: -6.22302px -6.22302px 18.6691px #3b4451,
+    6.22302px 6.22302px 18.6691px #000000;
+  border-radius: 12.446px;
+  position: relative;
+  aspect-ratio: 1/1;
 `;
 
 const NavbarLink = styled.li`
-  margin: 0 16px;
+  display: flex;
+  position: relative;
+  margin: 0px 16px;
+  align-items: center;
+  justify-content: center;
+  right: 8px;
   font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
-  color: rgba(0, 124, 132, 1);
+  color: rgba(255, 255, 255, 1);
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3),
     -2px -2px 10px rgba(255, 255, 255, 0.3);
   &:hover {
@@ -59,29 +73,27 @@ const DropdownMenu = styled.div`
   position: absolute;
   top: 98px;
   right: 10px;
-  background: linear-gradient(
-      95.73deg,
-      rgba(0, 118, 135, 0.08) 0.9%,
-      rgba(0, 118, 135, 0.06) 52.54%,
-      rgba(0, 118, 135, 0.02) 99.06%
-    ),
-    rgba(235, 240, 241, 0.3);
-  border-radius: 12px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: rgba(0, 124, 132, 1);
+  width: 8rem;
+  background: #2c2f33;
+  box-shadow: -6.22302px -6.22302px 18.6691px #3b4451,
+    6.22302px 6.22302px 18.6691px #000000;
+  border-radius: 24.8921px;
+  color: rgba(26, 145, 250, 1);
   display: ${(props) => (props.isOpen ? "block" : "none")};
 `;
 
 const DropdownLink = styled(Link)`
   display: block;
   padding: 0.5rem;
-  color: rgba(0, 124, 132, 1);
+  color: rgba(255, 255, 255, 1);
   text-decoration: none;
   transition: all 0.3s ease;
+  background: #2c2f33;
+  box-shadow: -6.22302px -6.22302px 18.6691px #3b4451,
+    6.22302px 6.22302px 18.6691px #000000;
+  border-radius: 12.446px;
   &:hover {
-    background: #007c84;
-    color: #fff;
-    /* Shadow 01 */
+    color: rgba(26, 145, 250, 1);
 
     box-shadow: 0px 15px 80px rgba(0, 124, 132, 0.13),
       0px 5.47525px 40.9132px rgba(0, 124, 132, 0.0896976),
@@ -93,8 +105,11 @@ const DropdownLink = styled(Link)`
 `;
 
 const SearchContainer = styled.div`
+  left: 35rem;
+  right: 40rem;
   display: flex;
   align-items: center;
+  position: relative;
 `;
 
 const SearchForm = styled.form`
@@ -108,15 +123,10 @@ const SearchInput = styled.input`
   margin-left: -500px;
   color: rgba(0, 124, 132, 1);
   padding: 0.5rem 1rem;
-  background: linear-gradient(
-      95.73deg,
-      rgba(0, 118, 135, 0.08) 0.9%,
-      rgba(0, 118, 135, 0.06) 52.54%,
-      rgba(0, 118, 135, 0.02) 99.06%
-    ),
-    rgba(235, 240, 241, 0.3);
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
+  background: #2c2f33;
+  box-shadow: inset -6.22302px -6.22302px 6.22302px #3b4451,
+    inset 3.73381px 3.73381px 6.22302px #000000;
+  border-radius: 12.446px;
   &:focus {
     box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.25),
       inset -2px -2px 8px rgba(0, 0, 0, 0.25);
@@ -125,17 +135,26 @@ const SearchInput = styled.input`
 `;
 
 const SearchButton = styled.button`
-  background-color: transparent;
+  //background-color: transparent;
   border: none;
-  color: rgba(0, 124, 132, 1);
+  color: rgba(255, 255, 255, 1);
   cursor: pointer;
   transition: all 0.3s ease;
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   &:active {
     color: #bbb;
   }
+  padding: 0.5rem;
+  width: 2.5rem;
+  margin: 0.3rem;
+  background: #2c2f33;
+  box-shadow: -6.22302px -6.22302px 18.6691px #3b4451,
+    6.22302px 6.22302px 18.6691px #000000;
+  border-radius: 12.446px;
+  position: relative;
+  aspect-ratio: 1/1;
 `;
 
 const Navbar = () => {
@@ -148,7 +167,7 @@ const Navbar = () => {
         <SearchForm>
           <SearchInput type="text" placeholder="Type to search" />
           <SearchButton type="submit">
-            <FiSearch size={20} />
+            <FiSearch size={24} />
           </SearchButton>
         </SearchForm>
       </SearchContainer>
@@ -156,9 +175,13 @@ const Navbar = () => {
         <NavbarLink>
           <FiHome size={24} />
         </NavbarLink>
+      </NavbarLinks>
+      <NavbarLinks>
         <NavbarLink>
           <FiBell size={24} />
         </NavbarLink>
+      </NavbarLinks>
+      <NavbarLinks>
         <NavbarLink onClick={() => setIsOpen(!isOpen)}>
           <FiUser size={24} />
         </NavbarLink>
