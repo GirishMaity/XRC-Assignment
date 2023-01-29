@@ -127,7 +127,6 @@ const Login = () => {
 
   useGoogleOneTapLogin({
     onSuccess: (credentialResponse) => {
-      //console.log(credentialResponse.credential);
       var decoded = jwt_decode(credentialResponse.credential);
       console.log(decoded);
       localStorage.setItem("data", decoded.name);
@@ -149,24 +148,24 @@ const Login = () => {
     }
   };
 
-  const loginGoogle = useGoogleLogin({
-    onSuccess: async (response) => {
-      try {
-        const res = await axios.get(
-          "https://www.googleapis.com/oauth2/v3/userinfo",
-          {
-            headers: {
-              Authorization: `Bearer ${response.access_token}`,
-            },
-          }
-        );
+  // const loginGoogle = useGoogleLogin({
+  //   onSuccess: async (response) => {
+  //     try {
+  //       const res = await axios.get(
+  //         "https://www.googleapis.com/oauth2/v3/userinfo",
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer ${response.access_token}`,
+  //           },
+  //         }
+  //       );
 
-        console.log(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    },
-  });
+  //       console.log(res.data);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   },
+  // });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
