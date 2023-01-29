@@ -4,22 +4,25 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   height: 80vh;
-  margin-left: 270px;
+  margin-left: 280px;
   margin-right: 10px;
-  margin-top: 12px;
+  margin-top: 22px;
 `;
 
 const Card = styled.div`
   width: 254px;
   height: 190px;
   margin-right: 10px;
-  border-radius: 20px;
-  background-color: #333;
+
   position: relative;
   padding: 1.8rem;
-  border: 2px solid #c3c6ce;
+
   transition: 0.5s ease-out;
   overflow: visible;
+  background: linear-gradient(138.69deg, #1d5ba9 0%, #0a325a 100%);
+  box-shadow: 14px 14px 40px rgba(16, 16, 18, 0.75), -7px -7px 30px #262e32;
+  border-radius: 24.8921px;
+
   &:hover {
     border-color: #008bf8;
     box-shadow: 5px 5px 8px #222, -5px -5px 8px #444;
@@ -37,6 +40,7 @@ const CardDetails = styled.div`
   gap: 0.5em;
   display: grid;
   place-content: center;
+  rgba(206, 219, 220, 1)
 `;
 
 const Button = styled.button`
@@ -66,6 +70,7 @@ const Button = styled.button`
 const Text = styled.p`
   font-size: 1.5em;
   font-weight: bold;
+  color: rgba(206, 219, 220, 1);
 `;
 
 const Cards4 = () => {

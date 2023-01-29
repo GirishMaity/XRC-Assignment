@@ -8,39 +8,64 @@ const SidebarContainer = styled.div`
   position: fixed;
   left: 10px;
   top: 100px;
-  background-color: #333;
-  box-shadow: 5px 5px 8px #222, -5px -5px 8px #444;
+  background: #2c2f33;
+  box-shadow: -6.22302px -6.22302px 18.6691px #3b4451,
+    6.22302px 6.22302px 18.6691px #000000;
+  border-radius: 24.8921px;
+
   transition: all 0.3s ease;
   z-index: 1;
   overflow: auto;
   padding: 20px;
-  border-radius: 15px 15px 15px 15px;
 `;
 
 const SidebarLink = styled(Link)`
   display: block;
   padding: 1rem;
-  color: #fff;
+  color: rgba(255, 255, 255, 1);
+
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+
+  letter-spacing: 0.025em;
+  margin: 10px;
+
+  background: #2c2f33;
+  box-shadow: -6.22302px -6.22302px 18.6691px #3b4451,
+    6.22302px 6.22302px 18.6691px #000000;
+  border-radius: 12.446px;
   text-decoration: none;
   transition: all 0.3s ease;
   &:hover {
-    background-color: #444;
+    background: #2c2f33;
+    box-shadow: inset -6.22302px -6.22302px 6.22302px #3b4451,
+      inset 3.73381px 3.73381px 6.22302px #000000;
+    border-radius: 12.446px;
+    color: rgba(26, 145, 250, 1);
   }
 `;
 
 const SidebarText = styled.h1`
   font-weight: bold;
-  color: #f5f5f5;
-  font-size: 1.5rem;
-  margin: 0 0 20px 0;
-  padding: 10px 0;
-  border-bottom: 1px solid white;
+
+  font-style: normal;
+  font-weight: 300;
+  font-size: 23px;
+  line-height: 40px;
+
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+
+  color: rgba(26, 145, 250, 1);
 `;
 
 const SideBar = () => {
   return (
     <SidebarContainer>
       <SidebarText>My Projects</SidebarText>
+      <br />
       <SidebarLink to="/team-projects">
         <i className="fa fa-users" aria-hidden="true"></i>Team Projects
       </SidebarLink>
