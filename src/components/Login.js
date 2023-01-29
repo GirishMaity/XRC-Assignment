@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { GoogleLogin, useGoogleLogin } from "@react-oauth/google";
+import jwt_decode from "jwt-decode";
+import axios from "axios";
+import { useGoogleOneTapLogin } from "@react-oauth/google";
 
 const Background = styled.div`
   background: linear-gradient(
@@ -101,12 +105,37 @@ const Button = styled.button`
   }
 `;
 
+const GoogleButton = styled.button`
+  background-color: black;
+  padding: 20px;
+  border-radius: 0.5rem;
+  color: white;
+  border: none;
+  margin-bottom: 50px;
+  i {
+    margin-right: 10px;
+  }
+`;
+
 const Login = () => {
   const navigate = useNavigate();
 
   const [userData, setUserData] = useState({
     name: "",
     email: "",
+  });
+
+  useGoogleOneTapLogin({
+    onSuccess: (credentialResponse) => {
+      //console.log(credentialResponse.credential);
+      var decoded = jwt_decode(credentialResponse.credential);
+      console.log(decoded);
+      localStorage.setItem("data", decoded.name);
+      navigate(`/dashboard`);
+    },
+    onError: () => {
+      console.log("Login Failed");
+    },
   });
 
   const handleLogin = (e) => {
@@ -119,6 +148,25 @@ const Login = () => {
       console.log(error);
     }
   };
+
+  const loginGoogle = useGoogleLogin({
+    onSuccess: async (response) => {
+      try {
+        const res = await axios.get(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers: {
+              Authorization: `Bearer ${response.access_token}`,
+            },
+          }
+        );
+
+        console.log(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -160,6 +208,18 @@ const Login = () => {
           >
             Begin Experience
           </Button>
+          {/* <GoogleLogin
+            onSuccess={(credentialResponse) => {
+              console.log(credentialResponse);
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+          /> */}
+
+          {/* <GoogleButton onClick={loginGoogle}>
+            Continue with Google
+          </GoogleButton> */}
         </form>
       </Container>
     </Background>
