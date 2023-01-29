@@ -14,12 +14,21 @@ const Card = styled.div`
   height: 190px;
   margin-right: 10px;
   border-radius: 20px;
-  background-color: #333;
+
   position: relative;
   padding: 1.8rem;
-  border: 2px solid #c3c6ce;
+
   transition: 0.5s ease-out;
   overflow: visible;
+  background: linear-gradient(
+      95.73deg,
+      rgba(0, 118, 135, 0.08) 0.9%,
+      rgba(0, 118, 135, 0.06) 52.54%,
+      rgba(0, 118, 135, 0.02) 99.06%
+    ),
+    rgba(235, 240, 241, 0.3);
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   &:hover {
     border-color: #008bf8;
     box-shadow: 5px 5px 8px #222, -5px -5px 8px #444;
