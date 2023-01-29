@@ -165,7 +165,7 @@ const Navbar = () => {
       <SearchContainer>
         <SearchForm>
           <SearchInput type="text" placeholder="Type to search" />
-          <SearchButton type="submit">
+          <SearchButton>
             <FiSearch size={24} />
           </SearchButton>
         </SearchForm>
