@@ -13,20 +13,16 @@ const Card = styled.div`
   width: 254px;
   height: 190px;
   margin-right: 10px;
-
   position: relative;
   padding: 1.8rem;
-
   transition: 0.5s ease-out;
   overflow: visible;
   background: linear-gradient(138.69deg, #1d5ba9 0%, #0a325a 100%);
   box-shadow: 14px 14px 40px rgba(16, 16, 18, 0.75), -7px -7px 30px #262e32;
   border-radius: 24.8921px;
-
   &:hover {
     border-color: #008bf8;
     box-shadow: 5px 5px 8px #222, -5px -5px 8px #444;
-
     Button {
       transform: translate(-50%, 50%);
       opacity: 1;
@@ -93,7 +89,6 @@ const Cards4 = () => {
         <CardDetails>
           <Text>+ New Project</Text>
         </CardDetails>
-        {/* <Button>Github</Button> */}
       </Card>
     </Container>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -12,7 +12,6 @@ const SidebarContainer = styled.div`
   box-shadow: -6.22302px -6.22302px 18.6691px #3b4451,
     6.22302px 6.22302px 18.6691px #000000;
   border-radius: 24.8921px;
-
   transition: all 0.3s ease;
   z-index: 1;
   overflow: auto;
@@ -23,15 +22,12 @@ const SidebarLink = styled(Link)`
   display: block;
   padding: 1rem;
   color: rgba(255, 255, 255, 1);
-
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
-
   letter-spacing: 0.025em;
   margin: 10px;
-
   background: #2c2f33;
   box-shadow: -6.22302px -6.22302px 18.6691px #3b4451,
     6.22302px 6.22302px 18.6691px #000000;
@@ -66,16 +62,16 @@ const SideBar = () => {
     <SidebarContainer>
       <SidebarText>My Projects</SidebarText>
       <br />
-      <SidebarLink to="/team-projects">
+      <SidebarLink>
         <i className="fa fa-users" aria-hidden="true"></i>Team Projects
       </SidebarLink>
-      <SidebarLink to="/draft">
+      <SidebarLink>
         <i className="fa fa-edit" aria-hidden="true"></i>Draft
       </SidebarLink>
-      <SidebarLink to="/favourites">
+      <SidebarLink>
         <i className="fa fa-heart" aria-hidden="true"></i>Favourites
       </SidebarLink>
-      <SidebarLink to="/asset-library">
+      <SidebarLink>
         <i className="fa fa-folder" aria-hidden="true"></i>Asset Library
       </SidebarLink>
     </SidebarContainer>

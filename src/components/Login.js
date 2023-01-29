@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { GoogleLogin, useGoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
-import axios from "axios";
 import { useGoogleOneTapLogin } from "@react-oauth/google";
 
 const Background = styled.div`
@@ -17,12 +14,10 @@ const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
   height: 100vh;
 `;
 
 const Container = styled.div`
-  // position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +26,6 @@ const Container = styled.div`
   height: 500px;
   left: 532px;
   top: 62px;
-
   border-radius: 24px;
   background: #2c2f33;
   box-shadow: -6.22302px -6.22302px 18.6691px #3b4451,
@@ -43,19 +37,11 @@ const Text = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  // width: 303px;
-  // height: 24px;
-  // left: 36px;
-  // top: 15px;
   font-style: normal;
   font-weight: 700;
   font-size: 50px;
   line-height: 24px;
-
   text-align: center;
-
-  /* Silver/700 */
-
   color: rgba(255, 255, 255, 1);
 `;
 
@@ -64,14 +50,10 @@ const Input = styled.input`
   top: 4rem;
   width: 17rem;
   height: 2.5rem;
-
-
   border-radius: 10px;
   background: #2c2f33;
   box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.25),
-      inset -2px -2px 8px rgba(0, 0, 0, 0.25);
-  
-  //border-radius: 12.446px;
+      inset -2px -2px 8px rgba(0, 0, 0, 0.25); 
   &:focus {
     box-shadow: inset -6.22302px -6.22302px 6.22302px #3b4451,
     inset 3.73381px 3.73381px 6.22302px #000000;
@@ -85,13 +67,11 @@ const Button = styled.button`
   align-items: center;
   padding: 10px;
   gap: 10px;
-
   position: relative;
   width: 303px;
   height: 44px;
   //left: 36px;
   top: 6rem;
-
   background-color: #008bf8;
   color: #fff;
   border-radius: 12px;
@@ -102,18 +82,6 @@ const Button = styled.button`
     box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5),
       inset -1px -1px 2px rgba(255, 255, 255, 0.05);
     transition: 0.3s;
-  }
-`;
-
-const GoogleButton = styled.button`
-  background-color: black;
-  padding: 20px;
-  border-radius: 0.5rem;
-  color: white;
-  border: none;
-  margin-bottom: 50px;
-  i {
-    margin-right: 10px;
   }
 `;
 
@@ -140,33 +108,15 @@ const Login = () => {
 
   const handleLogin = (e) => {
     try {
-      if (userData.email === "abc" && userData.name === "Girish") {
+      if (userData.name === "Girish" && userData.email === "abc") {
         e.preventDefault();
+        localStorage.setItem("data", userData.name);
         navigate("/dashboard");
       }
     } catch (error) {
       console.log(error);
     }
   };
-
-  const loginGoogle = useGoogleLogin({
-    onSuccess: async (response) => {
-      try {
-        const res = await axios.get(
-          "https://www.googleapis.com/oauth2/v3/userinfo",
-          {
-            headers: {
-              Authorization: `Bearer ${response.access_token}`,
-            },
-          }
-        );
-
-        console.log(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    },
-  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -182,20 +132,7 @@ const Login = () => {
   return (
     <Background>
       <Container>
-        {/* <GoogleLogin
-          onSuccess={(credentialResponse) => {
-            console.log(credentialResponse);
-            var decoded = jwt_decode(credentialResponse.credential);
-            console.log(decoded);
-            localStorage.setItem("data", decoded.name);
-            navigate(`/dashboard`);
-          }}
-          onError={() => {
-            console.log("Login Failed");
-          }}
-          useOneTap
-        /> */}
-        ;<Text>Login</Text>
+        <Text>Login</Text>
         <form>
           <Input
             placeholder="  Full name"
@@ -215,24 +152,7 @@ const Login = () => {
           />
           <br />
           <br />
-          <Button
-            //className="text-white text-lg inline-block cursor-pointer will-change-transform shadow-lg px-4 rounded bg-blue-700"
-            onClick={handleLogin}
-          >
-            Begin Experience
-          </Button>
-          {/* <GoogleLogin
-            onSuccess={(credentialResponse) => {
-              console.log(credentialResponse);
-            }}
-            onError={() => {
-              console.log("Login Failed");
-            }}
-          /> */}
-
-          {/* <GoogleButton onClick={loginGoogle}>
-            Continue with Google
-          </GoogleButton> */}
+          <Button onClick={handleLogin}>Begin Experience</Button>
         </form>
       </Container>
     </Background>
