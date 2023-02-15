@@ -3,6 +3,17 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import jwt_decode from "jwt-decode";
 import { useGoogleOneTapLogin } from "@react-oauth/google";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  setDoc,
+  where,
+} from "firebase/firestore";
+import { db } from "../firestore";
 
 const Background = styled.div`
   background: linear-gradient(
@@ -95,9 +106,27 @@ const Login = () => {
 
   useGoogleOneTapLogin({
     onSuccess: (credentialResponse) => {
-      console.log(credentialResponse.credential);
+      //console.log(credentialResponse.credential);
       var decoded = jwt_decode(credentialResponse.credential);
       console.log(decoded);
+      const q = query(
+        collection(db, "users"),
+        where("email", "==", decoded.email)
+      );
+      const fetchData = async () => {
+        const querySnapshot = await getDocs(q);
+        if (querySnapshot.empty) {
+          const docRef = addDoc(collection(db, "users"), {
+            name: decoded.name,
+            email: decoded.email,
+          });
+          console.log("nhi hai");
+        } else {
+          console.log("hai");
+        }
+      };
+      fetchData();
+
       localStorage.setItem("data", decoded.name);
       navigate(`/dashboard`);
     },
@@ -111,6 +140,7 @@ const Login = () => {
       if (userData.name === "Girish" && userData.email === "abc") {
         e.preventDefault();
         localStorage.setItem("data", userData.name);
+
         navigate("/dashboard");
       }
     } catch (error) {
