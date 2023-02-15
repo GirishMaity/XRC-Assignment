@@ -1,9 +1,9 @@
-import { config } from "dotenv";
+//import { config } from "dotenv";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: config.env.FIRESTORE_API_KEY,
+  apiKey: "AIzaSyCV9JFBJGCMjA_BzBNanVRDDkFmTpgVZ6Y",
   authDomain: "xrc-assignment-67124.firebaseapp.com",
   projectId: "xrc-assignment-67124",
   storageBucket: "xrc-assignment-67124.appspot.com",
